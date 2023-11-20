@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Vista de árbol -->
+    <record id="equipo_view_tree" model="ir.ui.view">
+        <field name="name">Vista Árbol</field>
+        <field name="model">futbol.equipos</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Campos a mostrar en la vista de árbol -->
+                <field name="name"/>
+                <field name="entrenador"/>
+                <field name="jugadores"/>
+                <field name="categoria"/>
+                <field name="puesto"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Acción de ventana -->
+    <record id="View_and_form_equipos" model="ir.actions.act_window">
+        <field name="name">View_Tree_equipo</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">futbol.equipos</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="equipo_view_tree"/>
+    </record>
+
+    <!-- Vista de formulario -->
+    <record id="equipo_view_form" model="ir.ui.view">
+        <field name="name">Vista Formulario</field>
+        <field name="model">futbol.equipos</field>
+        <field name="arch" type="xml">
+            <form>
+                <!-- Campos a mostrar en la vista de formulario -->
+                <group>
+                    <field name="name"/>
+                    <field name="entrenador"/>
+                    <field name="jugadores"/>
+                    <field name="categoria"/>
+                    <field name="puesto"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- add view list jugador-->
+    <record id="jugador_view_tree" model="ir.ui.view">
+        <field name="name">Vista Árbol</field>
+        <field name="model">futbol.jugadores</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Campos a mostrar en la vista de árbol -->
+                <field name="name"/>
+                <field name="apellido"/>
+                <field name="fecha_nacimiento"/>
+                <field name="equipo"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- add form jugador-->
+    <record id="jugador_view_form" model="ir.ui.view">
+        <field name="name">Vista Formulario</field>
+        <field name="model">futbol.jugadores</field>
+        <field name="arch" type="xml">
+            <form>
+                <!-- Campos a mostrar en la vista de formulario -->
+                <group>
+                    <field name="name"/>
+                    <field name="apellido"/>
+                    <field name="fecha_nacimiento"/>
+                    <field name="equipo"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- add action window jugador-->
+    <record id="View_and_form_jugadores" model="ir.actions.act_window">
+        <field name="name">View_Tree_jugador</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">futbol.jugadores</field>
+        <field name="view_mode">tree,form,calendar</field>
+        <field name="view_id" ref="jugador_view_tree"/>
+    </record>
+
+    <!-- Menú -->
+    <menuitem id="Menu_equipos" name="Equipos" action="View_and_form_equipos"/>
+    <!-- submenú jugadores-->
+    <menuitem id="Menu_jugadores" name="Jugadores" parent="Menu_equipos" action="View_and_form_jugadores"/>
+</odoo>
