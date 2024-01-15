@@ -1,0 +1,4 @@
+<aura:component>
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	<span class="topo" aura:id="topo" onclick="{!c.topoClick}">5</span> 
+</aura:component>

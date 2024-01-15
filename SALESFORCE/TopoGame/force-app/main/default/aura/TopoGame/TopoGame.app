@@ -1,0 +1,9 @@
+<aura:application>
+    <c:Topo/>
+    <c:Topo/>
+    <c:Topo/>
+    <c:Topo/>
+    <c:Topo/>
+    <c:Topo/>
+    <c:Topo/>
+</aura:application>	
