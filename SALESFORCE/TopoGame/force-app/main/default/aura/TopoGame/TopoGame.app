@@ -6,4 +6,5 @@
     <c:Topo/>
     <c:Topo/>
     <c:Topo/>
+    <c:Marcador/>
 </aura:application>	
