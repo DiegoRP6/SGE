@@ -8,4 +8,11 @@ public with sharing class RandomApex {
     public static Double random() {
         return Math.random();
     }
+
+    @AuraEnabled   //IMPORTANTE PONERLO EN EL EXAMEN
+    public static Double insertScore(   ) {
+        return Math.random();
+    }
+
+
 }
