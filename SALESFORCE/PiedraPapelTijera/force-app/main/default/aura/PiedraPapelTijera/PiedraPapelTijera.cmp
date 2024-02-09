@@ -1,0 +1,12 @@
+<aura:component controller="PiedraPapelTijeraController">
+    <aura:attribute name="playerSelection" type="String" default=""/>
+    <aura:attribute name="opponentSelection" type="String" default=""/>
+    
+    <button onclick="{!c.seleccionarOpcion}" value="piedra">Piedra</button>
+    <button onclick="{!c.seleccionarOpcion}" value="papel">Papel</button>
+    <button onclick="{!c.seleccionarOpcion}" value="tijera">Tijera</button>
+    
+    <div>Selección del Jugador: {!v.playerSelection}</div>
+    <div>Selección del Oponente: {!v.opponentSelection}</div>
+    <div>Resultado: {!v.resultado}</div>
+</aura:component>
