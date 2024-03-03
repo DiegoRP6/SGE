@@ -1,0 +1,12 @@
+<aura:component>
+    <aura:attribute name="restart" type="Boolean" default="false"/>
+
+    <aura:if isTrue="{!not(v.restart)}">
+    <h1>¡Has perdido! :(</h1>
+    <lightning:button  label="Reiniciar juego" onclick="{!c.restartGame}" />
+    </aura:if>
+
+    <aura:if isTrue="{!v.restart}">
+        <c:Inicio />
+    </aura:if>
+</aura:component>

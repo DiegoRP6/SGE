@@ -1,0 +1,25 @@
+<aura:component controller="GameControllerApex" implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="word" type="String"/>
+    <aura:attribute name="hiddenWord" type="String"/>
+    <aura:attribute name="guessedLetter" type="String"/>
+    <aura:attribute name="fails" type="Integer" default="0"/>
+    <aura:attribute name="hangmanImageSrc" type="String" default=""/>
+    <aura:attribute name="gameOver" type="Boolean" default="false"/>
+    <aura:attribute name="victory" type="Boolean" default="false"/>
+
+    <aura:if isTrue="{!not(v.gameOver) &amp;&amp; not(v.victory)}">
+        <p>Palabra: {!v.hiddenWord}</p>
+        <lightning:input aura:id="guessedLetter" label="Letra" value="{!v.guessedLetter}" onchange="{!c.validateInput}" maxlength="1"/>
+        <lightning:button label="Enviar" onclick="{!c.guessLetter}"/>
+        <p>Fallos: {!v.fails}</p>
+    </aura:if>    
+
+    <aura:if isTrue="{!v.gameOver}">
+        <c:GameOver/>
+    </aura:if>
+
+    <aura:if isTrue="{!v.victory}">
+        <c:Victory/>
+    </aura:if>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+</aura:component>

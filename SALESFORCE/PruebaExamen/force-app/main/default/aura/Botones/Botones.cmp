@@ -1,0 +1,15 @@
+<aura:component>
+    <aura:attribute name="notaSeleccionada" type="String" default=""/>
+    <aura:attribute name="Musica" type="String" default=""/>
+    <aura:attribute name="grabando" type="Boolean" default="false"/>
+    <aura:handler event="c:notaCambiadaEvent" action="{!c.handleNotaCambiada}"/>
+
+    <p>Nota seleccionada: {!v.notaSeleccionada}</p>
+    <p>musicccc {!v.Musica}</p>
+
+    <!-- Botón de grabar -->
+    <lightning:button label="Grabar" onclick="{!c.grabarNota}" aura:id="grabarBtn" disabled="{!empty(v.notaSeleccionada)}"/>
+
+    <!-- Botón de detener -->
+    <lightning:button label="Stop" onclick="{!c.detenerGrabacion}" aura:id="stopBtn" disabled="{!not(v.grabando)}"/>
+</aura:component>

@@ -1,0 +1,16 @@
+<aura:component>
+    <aura:attribute name="showInicio" type="Boolean" default="true"/>
+
+    <aura:if isTrue="{!v.showInicio}"> 
+        <div>
+            <p>¡Bienvenido al juego del ahorcado!</p>
+            <p>¡Haz clic en el botón para comenzar!</p>
+            
+            <lightning:button label="Comenzar" onclick="{!c.startGame}" />
+        </div>
+    </aura:if>
+
+    <aura:if isTrue="{!not(v.showInicio)}">
+        <c:Ahorcado/>
+    </aura:if>
+</aura:component>

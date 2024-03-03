@@ -1,0 +1,7 @@
+<aura:component>
+    <lightning:button label="la-" onclick="{!c.seleccionarNota}"><img src="https://us.123rf.com/450wm/lar01joka/lar01joka1710/lar01joka171000157/87741772-dibujo-aislado-de-una-nota-musical-octava-nota-ilustraci%C3%B3n-vectorial.jpg" alt="Error al cargar la imagen" style="width:100px;height:100px;"/></lightning:button>
+
+    <lightning:button label="lala-" onclick="{!c.seleccionarNota}"><img src="https://previews.123rf.com/images/lar01joka/lar01joka1710/lar01joka171000172/87741787-dibujo-aislado-de-una-nota-musical-octava-nota-ilustraci%C3%B3n-vectorial.jpg" alt="Error al cargar la imagen" style="width:100px;height:100px;"/></lightning:button>
+
+    <lightning:button label="sh-" onclick="{!c.seleccionarNota}"><img src="https://www.escribircanciones.com.ar/images/teoriamusical/imagenesdenotasmusicales/silencio-negra.png" alt="Error al cargar la imagen" style="width:100px;height:100px;"/></lightning:button>
+</aura:component> 
