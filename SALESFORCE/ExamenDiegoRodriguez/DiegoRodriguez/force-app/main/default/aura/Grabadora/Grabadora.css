@@ -1,0 +1,10 @@
+.THIS .secuencias-guardadas {
+    border: 1px solid #000000;
+    width: 100%;
+    border-collapse: collapse;
+    padding: 15px;
+}
+
+.THIS .secuencias-guardadas h2 {
+    font-weight: bold;
+}

@@ -1,0 +1,40 @@
+<aura:component controller="GrabadoraApex">
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}"/>
+    <aura:attribute name="TeclaSeleccionada" type="String" default=""/>
+    <aura:attribute name="Secuencia" type="String" default=""/>
+    <aura:attribute name="GrabacionActiva" type="Boolean" default="false"/>
+    <aura:attribute name="Secuencias" type="List" default="[]"/>
+    <aura:attribute name="SecuenciasGuardadas" type="List" default="[]"/>
+
+    <aura:handler event="c:TeclaPulsada" action="{!c.handleTeclaPulsada}"/>
+
+    <p>Tecla seleccionada: {!v.TeclaSeleccionada}</p>
+    
+    <div class="botones-container">
+        <lightning:button label="GRABAR" onclick="{!c.iniciarGrabacion}" >
+            <img src="https://cdn-icons-png.flaticon.com/512/786/786129.png" alt="Grabar" style="width:50px;height:50px;"/>
+        </lightning:button>
+        <lightning:button label="STOP" onclick="{!c.detenerGrabacion}" >
+            <img src="https://static.vecteezy.com/system/resources/previews/000/365/719/original/stop-vector-icon.jpg" alt="Detener" style="width:50px;height:50px;"/>
+        </lightning:button>
+        <lightning:button label="PLAY" onclick="{!c.reproducirSecuencias}" >
+            <img src="https://static.vecteezy.com/system/resources/previews/000/581/890/non_2x/play-icon-vector-illustration.jpg" alt="Reproducir" style="width:50px;height:50px;"/>
+        </lightning:button>
+    </div>
+    <lightning:button label="SAVE" onclick="{!c.guardarSecuencias}"/>
+    <lightning:button label="CLEAR" onclick="{!c.limpiarSecuencias}"/>
+
+    <p>Secuencia actual: {!v.Secuencia}</p>
+
+    <p>Secuencias Creadas:</p>
+    <aura:iteration items="{!v.Secuencias}" var="secuencia">
+        <p>{!secuencia}</p>
+    </aura:iteration>
+
+    <div>
+        <h1>Secuencias Guardadas en Base de Datos:</h1>
+        <aura:iteration items="{!v.SecuenciasGuardadas}" var="secuencia">
+            <p>{!secuencia}</p>
+        </aura:iteration>
+    </div>
+</aura:component>
