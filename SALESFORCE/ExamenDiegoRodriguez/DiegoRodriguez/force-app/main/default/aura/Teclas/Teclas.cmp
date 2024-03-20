@@ -1,6 +1,0 @@
-<aura:component>
-    <lightning:button label="0" onclick="{!c.seleccionarTecla}"><img src="https://cdn-icons-png.flaticon.com/512/31/31509.png" alt="Error al cargar la imagen" style="width:100px;height:100px;"/></lightning:button>
-
-    <lightning:button label="1" onclick="{!c.seleccionarTecla}"><img src="https://thumbs.dreamstime.com/b/tecla-de-teclado-del-ordenador-negro-n%C3%BAmero-d-ilustraci%C3%B3n-aislada-en-fondo-blanco-196368378.jpg" alt="Error al cargar la imagen" style="width:100px;height:100px;"/></lightning:button>
-
-</aura:component>   
